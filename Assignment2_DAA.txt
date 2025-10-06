@@ -1,0 +1,92 @@
+# Name : Rupesh Jaiswal
+# PRN : 123B1F036
+
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+struct Movie {
+    string title;
+    double rating;
+    int year;
+    int popularity;
+};
+
+// Comparator returns true if a should come before b (descending order)
+bool cmpRating(const Movie &a, const Movie &b) {
+    return a.rating > b.rating;
+}
+
+bool cmpYear(const Movie &a, const Movie &b) {
+    return a.year > b.year;
+}
+
+bool cmpPopularity(const Movie &a, const Movie &b) {
+    return a.popularity > b.popularity;
+}
+
+// Partition function for quicksort
+int partition(vector<Movie> &movies, int low, int high, bool (*cmp)(const Movie&, const Movie&)) {
+    Movie pivot = movies[high]; // pivot element
+    int i = low - 1;            // index of smaller element
+
+    for (int j = low; j < high; j++) {
+        // If movies[j] should come before pivot according to cmp, swap it forward
+        if (cmp(movies[j], pivot)) {
+            i++;
+            swap(movies[i], movies[j]);
+        }
+    }
+    swap(movies[i + 1], movies[high]);
+    return i + 1;
+}
+
+// QuickSort recursive function
+void quickSort(vector<Movie> &movies, int low, int high, bool (*cmp)(const Movie&, const Movie&)) {
+    if (low < high) {
+        int pi = partition(movies, low, high, cmp);
+
+        quickSort(movies, low, pi - 1, cmp);
+        quickSort(movies, pi + 1, high, cmp);
+    }
+}
+
+// Print movies
+void printMovies(const vector<Movie> &movies) {
+    for (const auto &m : movies) {
+        cout << m.title << " | Rating: " << m.rating << " | Year: " << m.year
+             << " | Popularity: " << m.popularity << endl;
+    }
+}
+
+int main() {
+    vector<Movie> movies = {
+        {"Movie A", 8.2, 2019, 1500},
+        {"Movie B", 9.1, 2021, 3000},
+        {"Movie C", 7.5, 2018, 2000},
+        {"Movie D", 8.9, 2020, 2500},
+        {"Movie E", 6.8, 2017, 1200}
+    };
+
+    cout << "Sort movies by:\n1. IMDB Rating\n2. Release Year\n3. Popularity\nEnter choice: ";
+    int choice; cin >> choice;
+
+    bool (*cmp)(const Movie&, const Movie&) = nullptr;
+
+    switch (choice) {
+        case 1: cmp = cmpRating; break;
+        case 2: cmp = cmpYear; break;
+        case 3: cmp = cmpPopularity; break;
+        default:
+            cout << "Invalid choice. Sorting by rating.\n";
+            cmp = cmpRating;
+    }
+
+    quickSort(movies, 0, movies.size() - 1, cmp);
+
+    cout << "\nMovies sorted:\n";
+    printMovies(movies);
+
+    return 0;
+}

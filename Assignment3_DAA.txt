@@ -1,0 +1,57 @@
+# Name : Rupesh Jaiswal
+#PRN : 123B1F036
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+struct Item {
+    double utility;
+    double weight;
+    double ratio;  // utility per weight
+};
+
+// Compare to sort by ratio descending
+bool compare(Item a, Item b) {
+    return a.ratio > b.ratio;
+}
+
+double fractionalKnapsack(vector<Item>& items, double capacity) {
+    sort(items.begin(), items.end(), compare);
+
+    double totalUtility = 0.0;
+    double remaining = capacity;
+
+    for (auto& item : items) {
+        if (item.weight <= remaining) {
+            totalUtility += item.utility;
+            remaining -= item.weight;
+        } else {
+            // Take fractional part
+            totalUtility += item.ratio * remaining;
+            break;
+        }
+    }
+    return totalUtility;
+}
+
+int main() {
+    int n;
+    double capacity;
+    cout << "Enter capacity of the boat: ";
+    cin >> capacity;
+    cout << "Enter number of items: ";
+    cin >> n;
+
+    vector<Item> items(n);
+    cout << "Enter utility and weight for each item:\n";
+    for (int i = 0; i < n; i++) {
+        cin >> items[i].utility >> items[i].weight;
+        items[i].ratio = items[i].utility / items[i].weight;
+    }
+
+    double maxUtility = fractionalKnapsack(items, capacity);
+    cout << "Maximum utility value = " << maxUtility << endl;
+
+    return 0;
+}
