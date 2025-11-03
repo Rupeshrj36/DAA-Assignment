@@ -155,3 +155,29 @@ int main() {
     return 0;
 
 }
+
+/*
+Output:
+Enter number of intersections (vertices): 6
+Enter number of roads (edges): 9
+Enter edges (u v w):
+0 1 4
+0 2 3
+1 2 1
+1 3 2
+2 3 4
+2 4 5
+3 4 1
+3 5 6
+4 5 2
+Enter ambulance start location (source): 0
+Enter number of hospitals: 2
+Enter hospital nodes:
+4
+5
+
+Nearest hospital is at node 4 with travel time 8 minutes.
+Optimal Path: 0 -> 1 -> 3 -> 4
+
+Do you want to update traffic conditions? (y/n): n
+*/
