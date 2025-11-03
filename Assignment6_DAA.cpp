@@ -96,3 +96,14 @@ int main() {
     return 0;
 }
 
+/*
+Output :
+🚚 SwiftCargo - Truck Loading Optimization (Knapsack with Perishables)
+
+Items loaded in the truck:
+✅ Item 5 | Weight: 15 | Utility: 90 | Perishable: Yes
+✅ Item 3 | Weight: 30 | Utility: 144 | Perishable: Yes
+Total Weight Loaded: 45 kg
+
+📦 Maximum Total Utility (using DP): 234
+*/
