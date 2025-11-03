@@ -170,3 +170,16 @@ int main() {
     return 0;
 
 }
+
+/*
+Output:
+Enter number of cities: 4
+Enter cost matrix (use large number for no direct route):
+0 10 15 20
+10 0 35 25
+15 35 0 30
+20 25 30 0
+
+Optimal Delivery Route (SwiftShip): 0 1 3 2 0
+Minimum Total Delivery Cost: 80
+*/
