@@ -86,3 +86,12 @@ int main() {
     return 0;
 }
 
+/*
+Output :
+How many elements do you want to enter? 4
+Enter 4 elements:
+23 56 1 89
+Sorted array:
+1 23 56 89 
+*/
+
