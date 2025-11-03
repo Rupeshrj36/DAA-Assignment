@@ -92,3 +92,32 @@ int main() {
     return 0;
 }
 
+/*
+Output :
+Sort movies by:
+1. IMDB Rating
+2. Release Year
+3. Popularity
+Enter choice: 1
+
+Movies sorted:
+Movie B | Rating: 9.1 | Year: 2021 | Popularity: 3000
+Movie D | Rating: 8.9 | Year: 2020 | Popularity: 2500
+Movie A | Rating: 8.2 | Year: 2019 | Popularity: 1500
+Movie C | Rating: 7.5 | Year: 2018 | Popularity: 2000
+Movie E | Rating: 6.8 | Year: 2017 | Popularity: 1200
+```
+
+Sort movies by:
+1. IMDB Rating
+2. Release Year
+3. Popularity
+Enter choice: 3
+
+Movies sorted:
+Movie B | Rating: 9.1 | Year: 2021 | Popularity: 3000
+Movie D | Rating: 8.9 | Year: 2020 | Popularity: 2500
+Movie C | Rating: 7.5 | Year: 2018 | Popularity: 2000
+Movie A | Rating: 8.2 | Year: 2019 | Popularity: 1500
+Movie E | Rating: 6.8 | Year: 2017 | Popularity: 1200
+*/
