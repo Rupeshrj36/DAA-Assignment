@@ -58,3 +58,14 @@ int main() {
     return 0;
 }
 
+/*
+Output : 
+Enter capacity of the boat: 50
+Enter number of items: 3
+Enter utility and weight for each item:
+60 10
+100 20
+120 30
+
+Maximum utility value = 240
+*/
