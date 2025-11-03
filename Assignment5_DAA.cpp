@@ -214,3 +214,34 @@ int main() {
     return 0;
 }
 
+/*
+Output :
+Enter total number of stages: 4
+Enter node count in each stage (4 values): 1 3 2 1
+Enter number of edges: 7
+Enter each edge as: source destination cost
+0 1 2
+0 2 3
+0 3 5
+1 4 4
+2 4 1
+2 5 6
+3 5 2
+
+Optimal costs from Stage 0 nodes:
+Node 0: Cost = 6.000000
+
+Enter a source node (stage 0) to display path, or -1 to skip: 0
+Best path from 0 : 0 -> 2 -> 4
+Total route cost: 4.000000
+
+Enter number of live edge cost updates (0 to finish): 1
+Enter update (u v multiplier): 2 4 3
+
+After updates, best costs from Stage 0 nodes:
+Node 0: Cost = 9.000000
+
+Enter a Stage 0 source node to view updated path (-1 to exit): 0
+Updated path from 0 : 0 -> 1 -> 4
+Updated route cost: 6.000000
+*/
