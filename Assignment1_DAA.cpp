@@ -87,11 +87,28 @@ int main() {
 }
 
 /*
-Output :
-How many elements do you want to enter? 4
-Enter 4 elements:
-23 56 1 89
-Sorted array:
-1 23 56 89 
+Output: 
+Enter number of customer orders: 5
+Enter Order ID and Timestamp:
+101 1678901234
+102 1678901200
+103 1678901250
+104 1678901180
+105 1678901220
+
+Before Sorting:
+Order ID: 101, Timestamp: 1678901234
+Order ID: 102, Timestamp: 1678901200
+Order ID: 103, Timestamp: 1678901250
+Order ID: 104, Timestamp: 1678901180
+Order ID: 105, Timestamp: 1678901220
+
+After Sorting by Timestamp:
+Order ID: 104, Timestamp: 1678901180
+Order ID: 102, Timestamp: 1678901200
+Order ID: 105, Timestamp: 1678901220
+Order ID: 101, Timestamp: 1678901234
+Order ID: 103, Timestamp: 1678901250
 */
+
 
